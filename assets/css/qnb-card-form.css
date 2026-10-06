@@ -1,0 +1,155 @@
+/* QNB Finansbank 3D Pay — kart formu (klasik ve blok ödeme sayfası) */
+.qnb-card-form {
+    --qnb-bg-1: #2a0f45;
+    --qnb-bg-2: #4a1f74;
+    --qnb-ink: #ffffff;
+    --qnb-ink-soft: rgba(255, 255, 255, .62);
+    --qnb-field: rgba(255, 255, 255, .09);
+    --qnb-field-border: rgba(255, 255, 255, .16);
+    --qnb-focus: rgba(255, 255, 255, .5);
+
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 440px;
+    margin: 4px 0 16px;
+    padding: 22px 22px 18px;
+    border: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--qnb-bg-1) 0%, var(--qnb-bg-2) 100%);
+    color: var(--qnb-ink);
+    box-shadow: 0 10px 32px rgba(42, 15, 69, .25);
+}
+
+.qnb-card-form::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .05);
+    pointer-events: none;
+}
+
+.qnb-card-form .qnb-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.qnb-card-form .qnb-chip {
+    display: inline-block;
+    width: 40px;
+    height: 28px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #e9c766, #c99a2e);
+}
+
+.qnb-card-form .qnb-secure {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--qnb-ink-soft);
+}
+
+.qnb-card-form .qnb-field {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 14px;
+}
+
+.qnb-card-form .qnb-field label {
+    display: block;
+    margin: 0 0 6px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--qnb-ink-soft);
+}
+
+.qnb-card-form .qnb-field input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--qnb-field-border);
+    border-radius: 10px;
+    background: var(--qnb-field);
+    color: var(--qnb-ink);
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: border-color .2s ease, background .2s ease;
+}
+
+.qnb-card-form .qnb-field input::placeholder {
+    color: rgba(255, 255, 255, .3);
+}
+
+.qnb-card-form .qnb-field input:focus {
+    border-color: var(--qnb-focus);
+    background: rgba(255, 255, 255, .13);
+}
+
+.qnb-card-form #qnb_card_holder,
+.qnb-card-form .qnb-holder {
+    text-transform: uppercase;
+}
+
+.qnb-card-form .qnb-row {
+    display: flex;
+    gap: 12px;
+}
+
+.qnb-card-form .qnb-row .qnb-field {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.qnb-card-form .qnb-note {
+    position: relative;
+    z-index: 1;
+    margin: 4px 0 0;
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--qnb-ink-soft);
+}
+
+.qnb-test-badge {
+    display: inline-block;
+    margin: 0 0 8px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #fff4d6;
+    color: #7a5200;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.qnb-license-error {
+    color: #d63638;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .qnb-card-form {
+        padding: 18px 16px 14px;
+    }
+    .qnb-card-form .qnb-row {
+        gap: 8px;
+    }
+    .qnb-card-form .qnb-field input {
+        padding: 11px 12px;
+    }
+}

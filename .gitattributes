@@ -1,0 +1,3 @@
+# GitHub "Download ZIP" / git archive çıktısına testler dahil edilmez
+/tests export-ignore
+/.gitattributes export-ignore
